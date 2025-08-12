@@ -1,14 +1,14 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
-import javax.swing.*;
 
 public class Paddle extends Rectangle{
 
     int id;
-    int yvelocity;
+    int yVelocity;
 
-    Paddle(){
+    Paddle(int x,int y,int PADDLE_WIDTH,int PADDLE_HEIGHT,int id){
+        super(x,y,PADDLE_WIDTH,PADDLE_HEIGHT);
+        this.id=id;
 
     }
 
@@ -25,6 +25,11 @@ public class Paddle extends Rectangle{
 
     }
     public void draw(Graphics g){
-
+        if (id == 1) {
+            g.setColor(Color.BLUE);
+        } else {
+            g.setColor(Color.RED);
+        }
+        g.fillRect(x,y,width,height);
     }
 }

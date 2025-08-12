@@ -27,7 +27,7 @@ public class GamePanel extends JPanel implements Runnable{
         this.setFocusable(true);
         this.addKeyListener(new AL());
         this.setPreferredSize(SCREEN_SIZE);
-        this.setBackground(Color.black);
+        //this.setBackground(Color.black);
 
         gameThread = new Thread(this);
         gameThread.start();
@@ -36,8 +36,8 @@ public class GamePanel extends JPanel implements Runnable{
 
     }
     public void newPaddles(){
-        paddle1 = new Paddle();
-
+        paddle1 = new Paddle(0,(GAME_HEIGHT/2)-(PADDLE_HEIGHT/2),PADDLE_WIDTH,PADDLE_HEIGHT,1);
+        paddle2 = new Paddle(GAME_WIDTH-PADDLE_HEIGHT,(GAME_HEIGHT/2)-(PADDLE_HEIGHT/2),PADDLE_WIDTH,PADDLE_HEIGHT,2);
     }
     public void newPaint(Graphics g){
         image = createImage(getWidth(),getHeight());
@@ -47,7 +47,8 @@ public class GamePanel extends JPanel implements Runnable{
 
     }
     public void draw(Graphics g){
-
+        paddle1.draw(g);
+        paddle2.draw(g);
     }
     public void move(){
 
@@ -56,7 +57,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     }
     public void run(){
-
+//game loop
         long lastTime = System.nanoTime();
         double amountOfTicks = 60.0;
         double ns = 1000000000 / amountOfTicks;
