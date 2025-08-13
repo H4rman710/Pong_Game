@@ -20,6 +20,9 @@ public class Score extends Rectangle{
         g.setFont(new Font("Arial",Font.PLAIN,20));
 
         g.drawLine(GAME_WIDTH/2, 0 , GAME_WIDTH/2, GAME_HEIGHT);
+
+        g.drawString(String.valueOf(player1/10)+String.valueOf(player1%10),(GAME_WIDTH/2)-50,50);
+        g.drawString(String.valueOf(player2/10)+String.valueOf(player2%10),(GAME_WIDTH/2)+25,50);
     }
 
 }
