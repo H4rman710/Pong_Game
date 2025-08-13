@@ -1,13 +1,11 @@
 import java.awt.*;
-import java.awt.event.*;
 import java.util.*;
-import javax.swing.*;
 
 public class Ball extends Rectangle{
 
     Random random;
     int yVelocity;
-    int xVolicity;
+    int xVelocity;
     int initialSpeed = 2;
 
     Ball(int x,int y,int width,int height){
@@ -26,13 +24,13 @@ public class Ball extends Rectangle{
     }
 
     public void setXDirection(int randomXDirection){
-        xVolicity = randomXDirection;
+        xVelocity = randomXDirection;
     }
     public void setYDirection(int randomYDirection){
         yVelocity = randomYDirection;
     }
     public void move(){
-        x +=xVolicity;
+        x += xVelocity;
         y +=yVelocity;
     }
     public void draw(Graphics g) {

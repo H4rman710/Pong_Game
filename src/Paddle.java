@@ -1,7 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.event.*;
-import java.util.*;
 
 public class Paddle extends Rectangle{
 
@@ -62,8 +60,8 @@ public class Paddle extends Rectangle{
                 break;
         }
     }
-    public void setYDirection(int ydirection){
-        yVelocity = ydirection;
+    public void setYDirection(int yDirection){
+        yVelocity = yDirection;
     }
     public void move(){
         y=y+yVelocity;
